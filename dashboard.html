@@ -24,13 +24,13 @@
 				<div class="section_content">
 					<div class="header_title">
 						<i class="fa fa-cloud"></i>
-						<span>Optimus</span><span>Code</span>
+						<span>Code</span><span>Impact</span>
 					</div>
 					<nav class="header_menu">
 						<ul class="header_menu_list">
-							<li class="header_menu_list_item"><a href="home.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+							<li class="header_menu_list_item active"><a href="dashboard.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
 							<li class="header_menu_list_item"><a href="users.html"><i class="fa fa-users"></i><span>Users</span></a></li>
-							<li class="header_menu_list_item active"><a href="pages.html"><i class="fa fa-file-text-o"></i><span>Pages</span></a></li>
+							<li class="header_menu_list_item"><a href="elements.html"><i class="fa fa-file-text-o"></i><span>Pages</span></a></li>
 						</ul>
 					</nav>
 				</div>
@@ -55,7 +55,7 @@
 						</li>
 						<li class="page">
 							<div class="page-thumb">
-								<iframe src="http://stefanschwartze.com" height="680" width="1200"></iframe>
+								<iframe src="https://www.sevenval.com/de/" height="680" width="1200"></iframe>
 								<div class="mini-overlay">
 									<div id="canvas-holder" class="preview">
 										<canvas id="chart-page" width="75" height="75"/>
@@ -69,7 +69,7 @@
 						</li>
 						<li class="page">
 							<div class="page-thumb">
-								<iframe src="http://stefanschwartze.com/imprint.html" height="680" width="1200"></iframe>
+								<iframe src="https://www.sevenval.com/de/products/" height="680" width="1200"></iframe>
 								<div class="mini-overlay">
 									<div id="canvas-holder" class="preview">
 										<canvas id="chart-page2" width="75" height="75"/>
@@ -78,7 +78,21 @@
 								</div>
 							</div>
 							<div class="page-meta">
-								<h3>Imprint</h3>
+								<h3>Products</h3>
+							</div>
+						</li>
+						<li class="page">
+							<div class="page-thumb">
+								<iframe src="https://www.sevenval.com/de/competences/" height="680" width="1200"></iframe>
+								<div class="mini-overlay">
+									<div id="canvas-holder" class="preview">
+										<canvas id="chart-page2" width="75" height="75"/>
+									</div>
+										<strong class="preview-value">72%</strong>
+								</div>
+							</div>
+							<div class="page-meta">
+								<h3>Competences</h3>
 							</div>
 						</li>
 						<li class="page add">
@@ -99,17 +113,77 @@
 				<div class="section_content">
 					<div class="row">
 						<div class="col2 col">
-							<h2 class="section_content_heading_small heading_right"><i class="fa fa-file-text-o"></i>Statistics for whole site</h2>
-							<p>85 percent of your users can display your website without any problems.
-							On 15 percent, the site may crash.
-							</p>
-							<a href="#" class="button">About your users</a>
+								<div>
+									<p>Most used elements:</p>
+									<ul class="boxlist">
+										<li class="feature-box">
+											<i class="fa fa-html5"></i>
+											<code class="code">section</code>
+										</li>
+										<li class="feature-box">
+											<i class="fa fa-css3"></i>
+											<code class="code">position</code>
+										</li>
+									</ul>
+								</div>
+								<div>
+									<p>Most crashing elements:</p>
+									<ul class="boxlist">
+										<li class="feature-box">
+											<i class="fa fa-css3"></i>
+											<code class="code">flexbox</code>
+										</li>
+										<li class="feature-box">
+											<i class="fa fa-html5"></i>
+											<code class="code">header</code>
+										</li>
+									</ul>
+								</div>
+								<div>
+									<p>Your site works out of the box with:</p>
+									<ul class="boxlist">
+										<li class="browser-box">
+											<div class="browser-image chrome"></div>
+											<span>Chrome 42+</span>
+										</li>
+										<li class="browser-box">
+											<div class="browser-image safari"></div>
+											<span>Safari 4.5+</span>
+										</li>
+										<li class="browser-box">
+											<div class="browser-image firefox"></div>
+											<span>Firefox 32+</span>
+										</li>
+										<li class="browser-box">
+											<div class="browser-image ie"></div>
+											<span>IE 9+</span>
+										</li>
+										<li class="browser-box">
+											<div class="browser-image opera"></div>
+											<span>Opera 12+</span>
+										</li>
+									</ul>
+								</div>
 						</div>
 						<div class="col2 col">
-							<h2 class="section_content_heading_small heading_right"><i class="fa fa-question-circle"></i>What if I use … ?</h2>
-							<p>Which effects has the implementation of a new feature?
-							</p>
-							<a href="#" class="button">Learn more</a>
+							<p>Which effects has the implementation of an existing feature?</p>
+							<h2 class="section_content_heading_small query-box">
+								<i class="fa fa-question-circle"></i>
+								<span>What if I use</span>
+								<input type="text" class="input"/>
+								<span>?</span>
+								<a href="#" class="button">CHECK</a>
+							</h2>
+						</div>
+						<div class="col2 col">
+							<p>Which effects has the elimination of an existing feature?</p>
+							<h2 class="section_content_heading_small query-box">
+								<i class="fa fa-question-circle"></i>
+								<span>What if I delete</span>
+								<input type="text" class="input"/>
+								<span>?</span>
+								<a href="#" class="button">CHECK</a>
+							</h2>
 						</div>
 					</div>
 				</div>
@@ -147,18 +221,6 @@
 			<script src="js/Chart.min.js"></script>
 			<script type="text/javascript">
 				$(document).ready(function(){
-					$('a[href^="#"]').on('click',function (e) {
-						e.preventDefault();
-
-						var target = this.hash;
-						var $target = $(target);
-
-						$('html, body').stop().animate({
-							'scrollTop': $target.offset().top+ 1
-						}, 900, 'swing', function () {
-							//window.location.hash = target;
-						});
-					});
 					var dataSite = [
 						{
 							value: 15,

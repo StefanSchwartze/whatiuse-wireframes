@@ -26,7 +26,7 @@ body {
   width: 100%;
   position: absolute;
   background: white;
-  color: #666666;
+  color: #333333;
   font-family: Source Sans Pro;
   font-weight: lighter; }
 
@@ -165,6 +165,7 @@ img {
   margin: auto;
   max-width: 1280px;
   padding: 0 2rem;
+  padding-bottom: 2rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -285,6 +286,68 @@ img {
       .page-slider .page .page-meta h3 {
         margin: 0;
         text-align: center; }
+
+/* Lists Sass File
+ *
+ * @author Stefan Schwartze
+ */
+.boxlist {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .boxlist.full {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between; }
+
+.feature-box {
+  display: inline-flex;
+  padding: 0.25rem;
+  border-radius: 5px;
+  background: #0ab15a;
+  color: white; }
+  .feature-box .fa {
+    margin-right: 0.5rem; }
+
+.browser-box {
+  text-align: center;
+  display: inline-block; }
+  .browser-box .browser-image {
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    margin: auto; }
+    .browser-box .browser-image.ie {
+      background-image: url(../img/ie.png); }
+    .browser-box .browser-image.safari {
+      background-image: url(../img/safari.png); }
+    .browser-box .browser-image.chrome {
+      background-image: url(../img/chrome.png); }
+    .browser-box .browser-image.opera {
+      background-image: url(../img/opera.png); }
+    .browser-box .browser-image.firefox {
+      background-image: url(../img/firefox.png); }
+
+.query-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.input {
+  -webkit-appearance: none;
+  border: none;
+  font-size: 2rem;
+  max-width: 200px;
+  border-bottom: solid 2px #333333;
+  outline: none;
+  font-family: Source Sans Pro;
+  font-weight: green;
+  padding-left: 0.5rem; }
+  .input:focus {
+    border-color: #0ab15a; }
 
 body {
   background: #394963; }

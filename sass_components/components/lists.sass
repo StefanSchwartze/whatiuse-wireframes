@@ -1,0 +1,43 @@
+/*
+ * Lists Sass File
+ *
+ * @author Stefan Schwartze
+ */
+
+.boxlist
+	list-style: none
+	padding: 0
+	margin: 0
+	&.full
+		display: flex
+		align-items: stretch
+		justify-content: space-between
+.feature-box
+	display: inline-flex
+	padding: .25rem
+	border-radius: 5px
+	background: $green
+	color: white
+	.fa
+		margin-right: .5rem
+.browser-box
+	text-align: center
+	display: inline-block
+	.browser-image
+		width: 60px
+		height: 60px
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		background-color: white
+		margin: auto
+		&.ie
+			background-image: url(../img/ie.png)
+		&.safari
+			background-image: url(../img/safari.png)
+		&.chrome
+			background-image: url(../img/chrome.png)
+		&.opera
+			background-image: url(../img/opera.png)
+		&.firefox
+			background-image: url(../img/firefox.png)
