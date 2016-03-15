@@ -6,6 +6,7 @@
  *
  * @author Stefan Schwartze
  */
+/*$superlight_grey: #efefef */
 /* Sass Mixin: Vendor
  *
  * @author Stefan Schwartze
@@ -349,8 +350,35 @@ img {
   .input:focus {
     border-color: #0ab15a; }
 
-body {
-  background: #394963; }
+.element-box {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  margin-top: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #eeeeee; }
+  .element-box .browser-image {
+    width: 25px;
+    height: 25px; }
+
+.element-percentage {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 1rem; }
+
+.element-description {
+  padding: 1rem;
+  border-left: solid 1px #eeeeee; }
+  .element-description h2 {
+    margin: 0; }
+
+.element-property {
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .element-property > span:nth-child(2n) {
+    font-weight: bold;
+    font-size: 1.5rem; }
 
 .section.overview {
   background: #394963;
@@ -400,7 +428,12 @@ canvas {
   background: white; }
 
 .statistic {
-  color: white; }
+  color: white;
+  background: #394963; }
+
+.elements {
+  margin-top: calc(4rem + 3px);
+  background: #f8f8f8; }
 
 @media only screen and (max-width: 520px) {
   .chartcol #chart-site {

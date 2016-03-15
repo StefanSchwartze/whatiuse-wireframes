@@ -30,10 +30,91 @@
 						<ul class="header_menu_list">
 							<li class="header_menu_list_item"><a href="dashboard.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
 							<li class="header_menu_list_item"><a href="users.html"><i class="fa fa-users"></i><span>Users</span></a></li>
-							<li class="header_menu_list_item active"><a href="elements.html"><i class="fa fa-file-text-o"></i><span>Pages</span></a></li>
+							<li class="header_menu_list_item active"><a href="elements.html"><i class="fa fa-file-text-o"></i><span>Elements</span></a></li>
 						</ul>
 					</nav>
 				</div>
 			</header>
+
+			<div class="section elements">
+				<div class="section_content">
+					<div class="element-box">
+						<div id="canvas-holder" class="element-percentage">
+							<canvas id="chart-elem1" width="75" height="75"/>
+							<strong class="">77%</strong>
+						</div>
+						<div class="element-description">
+							<h2>flexbox</h2>
+							<div>
+								<ul class="boxlist full">
+									<li class="element-property">
+										<span>Not working at</span>
+										<span>23%</span>
+										<span>of users</span>
+									</li>
+									<li class="element-property">
+										<span>Support decrease</span>
+										<span>7%</span>
+										<span>of whole page</span>
+									</li>
+									<li class="element-property">
+										<span>Not supported by</span>
+										<ul class="boxlist">
+											<li class="browser-box">
+												<div class="browser-image firefox"></div>
+												<span>Firefox 32+</span>
+											</li>
+											<li class="browser-box">
+												<div class="browser-image ie"></div>
+												<span>IE 9+</span>
+											</li>
+											<li class="browser-box">
+												<div class="browser-image opera"></div>
+												<span>Opera 12+</span>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+			<script src="js/Chart.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					var dataSite = [
+						{
+							value: 23,
+							color:"#F7464A",
+							highlight: "#FF5A5E",
+							label: "Not supported"
+						},
+						{
+							value: 77,
+							color: "#efefef",
+							highlight: "#efefef",
+							label: "Supported"
+						}
+					];
+					window.onload = function(){
+						var ctxPage = document.getElementById("chart-elem1").getContext("2d");
+						window.myDoughnut = new Chart(ctxPage).Doughnut(
+							dataSite, 
+							{
+								responsive : true,
+								segmentShowStroke : false,
+								percentageInnerCutout : 75
+							});
+
+
+					};
+				});
+			</script>
+
+
 		</body>
 	</html>
