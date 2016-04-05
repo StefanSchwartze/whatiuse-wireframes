@@ -24,6 +24,11 @@
 	.section_content_description
 .row
 	width: 100%
+	&.row3
+		display: flex
+		flex-direction: row
+		margin-left: 320px
+		padding: 0 1rem
 	.col
 		width: 100%
 		float: left
@@ -40,15 +45,18 @@
 		width: 75%
 	.col14
 		width: 25%
+.sidebar
+	width: 320px
+	position: fixed
+	background: white
+	/*box-shadow: 0 3px 10px #efefef*/
+	height: 100%
 .chart
 	margin: 1rem
 
 @media only screen and (max-width : 1600px)
-	.section .section_content
 @media only screen and (max-width : 1024px)
-	.section.contact .section_content .row .col2
 @media only screen and (max-width : 740px)
-	.section .section_content .row .col img
 @media only screen and (max-width : 640px)
 @media only screen and (max-width : 560px)
 	.section_content

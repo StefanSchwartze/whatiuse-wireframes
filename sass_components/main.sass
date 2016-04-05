@@ -18,16 +18,19 @@
 @import "components/page-slider.sass"
 @import "components/lists.sass"
 @import "components/query-box.sass"
-@import "components/element-box.sass"
+@import "components/element.sass"
 
-body
-
-.section.overview
-	background: #394963
-	background: #DFE9F2
-	margin-top: calc(4rem + 3px)
-	.section_content
-		padding: 0
+.section
+	&.overview
+		background: #394963
+		background: #DFE9F2
+		margin-top: calc(4rem + 3px)
+		.section_content
+			padding: 0
+	&.elements
+		.section_content
+			padding-left: 0
+			padding-right: 0
 
 .chart
 	position: relative
@@ -46,6 +49,8 @@ body
 		font-size: 4rem
 		font-family: Roboto
 		color: white
+	&.elements
+		width: 100%
 canvas
 	z-index: 1
 .chart-value
@@ -63,15 +68,48 @@ canvas
 		margin-top: 0rem
 		top: -.6rem
 		position: relative
-.heading_left
 .support
 	background: white
 .statistic
 	color: white
 	background: #394963
 .elements
-	margin-top: calc(4rem + 3px)
+	margin-top: 61px
 	background: $superlight_grey
+.elements--chart
+	margin-top: calc(4rem + 3px)
+	.section_content
+		padding-bottom: 0
+	.chart
+		max-width: 100%
+
+.collapse-head
+	padding: .5rem
+	font-size: 1.25rem
+	background: #364347
+	color: white
+	h4
+		margin: 0
+.collapse-content
+	padding: .5rem
+	font-size: .5rem
+	.element-percentage
+		margin: 1rem auto
+		max-width: 120px
+		max-height: 120px
+		position: relative
+		.chart-overlay
+			height: 100%
+			width: 100%
+			font-size: 3rem
+			position: absolute
+			display: flex
+			justify-content: center
+			/* vertical-align: sub */
+			/* align-content: center */
+			align-items: center
+			sup
+				font-size: 1rem
 
 @media only screen and (max-width : 1600px)
 @media only screen and (max-width : 1024px)
@@ -84,6 +122,5 @@ canvas
 		.section_content_heading_small
 			display: inline-block
 			margin: 0
-	.heading_right
 	.button
 		width: 100%
