@@ -426,8 +426,7 @@ img {
         width: 100%;
         font-size: 1rem; }
         .element .element-box .chart-overlay strong sup {
-          vertical-align: super;
-          font-size: 0.65rem; }
+          font-size: 0.5rem; }
   .element .element-percentage {
     max-width: 60px;
     max-height: 60px;
@@ -617,6 +616,53 @@ canvas {
     margin: 0.5rem; }
     .listhead .property-type .fa {
       margin-right: 0.5rem; }
+
+.section.user-barchart {
+  margin-top: 61px; }
+  .section.user-barchart .section_content {
+    padding-bottom: 0; }
+  .section.user-barchart .browsers {
+    max-width: 100%; }
+
+.section.user-donuts {
+  background: #f8f8f8; }
+
+.browser-list {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .browser-list .browser-box {
+    flex-grow: 1;
+    margin: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 10px #eeeeee;
+    width: calc(100% * (1/8) - 1rem); }
+    .browser-list .browser-box header {
+      text-align: left; }
+      .browser-list .browser-box header h3 {
+        margin: 0; }
+        .browser-list .browser-box header h3 .fa {
+          margin-right: 0.5rem; }
+    .browser-list .browser-box .browser-box-content .chart {
+      position: relative; }
+    .browser-list .browser-box .browser-box-content .chart-overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      text-align: center;
+      align-items: center; }
+      .browser-list .browser-box .browser-box-content .chart-overlay strong {
+        width: 100%;
+        font-size: 2rem; }
+        .browser-list .browser-box .browser-box-content .chart-overlay strong sup {
+          font-size: 1rem; }
 
 @media only screen and (max-width: 520px) {
   .chartcol #chart-site {

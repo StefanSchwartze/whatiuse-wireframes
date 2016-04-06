@@ -163,6 +163,57 @@ canvas
 		.fa
 			margin-right: .5rem
 
+
+
+
+.section.user-barchart
+	margin-top: 61px
+	.section_content
+		padding-bottom: 0
+	.browsers
+		max-width: 100%
+
+.section.user-donuts
+	background: #f8f8f8
+
+.browser-list
+	display: flex
+	width: 100%
+	flex-direction: row
+	align-items: stretch
+	justify-content: space-around
+	flex-wrap: wrap
+	.browser-box
+		flex-grow: 1
+		margin: .5rem
+		margin-top: 1rem
+		padding: .5rem
+		border-radius: 5px
+		background: white
+		box-shadow: 0 0 10px #eeeeee
+		width: calc(100% * (1/8) - 1rem)
+		header
+			text-align: left
+			h3
+				margin: 0
+				.fa
+					margin-right: .5rem
+		.browser-box-content
+			.chart
+				position: relative
+			.chart-overlay
+				position: absolute
+				height: 100%
+				width: 100%
+				display: flex
+				text-align: center
+				align-items: center
+				strong
+					width: 100%
+					font-size: 2rem
+					sup
+						font-size: 1rem
+
 @media only screen and (max-width : 1600px)
 @media only screen and (max-width : 1024px)
 @media only screen and (max-width : 640px)

@@ -48,7 +48,7 @@
 							<div class="collapse-content">
 								<div id="canvas-holder" class="element-percentage">
 									<div class="chart-overlay">
-										<strong class="">47<sup>%</sup></strong>
+										<strong class=""><span>47</span><sup>%</sup></strong>
 									</div>
 									<canvas id="chart-elem1" width="75" height="75"/>
 								</div>
@@ -78,7 +78,7 @@
 								<div class="compare-chart">
 									<div id="canvas-holder" class="compare-begin">
 										<div class="chart-overlay">
-											<strong class="">72<sup>%</sup></strong>
+											<strong class=""><span>72</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem72" width="75" height="75"/>
 									</div>
@@ -88,7 +88,7 @@
 									</div>
 									<div id="canvas-holder" class="compare-result">
 										<div class="chart-overlay">
-											<strong class="">87<sup>%</sup></strong>
+											<strong class=""><span>87</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem87" width="75" height="75"/>
 									</div>
@@ -116,7 +116,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">47<sup>%</sup></strong>
+											<strong class=""><span>47</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -167,7 +167,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">36<sup>%</sup></strong>
+											<strong class=""><span>36</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -217,7 +217,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">23<sup>%</sup></strong>
+											<strong class=""><span>23</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -267,7 +267,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">18<sup>%</sup></strong>
+											<strong class=""><span>18</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -317,7 +317,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">14<sup>%</sup></strong>
+											<strong class=""><span>14</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -367,7 +367,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">9<sup>%</sup></strong>
+											<strong class=""><span>9</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -417,7 +417,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">5<sup>%</sup></strong>
+											<strong class=""><span>5</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -467,7 +467,7 @@
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
 										<div class="chart-overlay">
-											<strong class="">9<sup>%</sup></strong>
+											<strong class=""><span>9</span><sup>%</sup></strong>
 										</div>
 										<canvas id="chart-elem1" width="75" height="75"/>
 									</div>
@@ -608,6 +608,44 @@
 								segmentShowStroke : false,
 								percentageInnerCutout : 75
 							});
+
+
+						var elementBoxes = $('.element .element-percentage');
+
+						window.charts = [];
+						for (var i = 0; i < elementBoxes.length; i++) {
+							var elem = elementBoxes.eq(i);
+							var value = elem.find('.chart-overlay > strong span').text();
+							var donut = elem.find('canvas')[0].getContext("2d");
+console.log(donut);
+							window.charts.push(new Chart(donut).Doughnut(
+								[
+									{
+										value: 100 - value,
+										color:"#efefef",
+										highlight: "#efefef",
+										label: "Rest"
+									},
+									{
+										value: value,
+										color: "#f84545",
+										highlight: "#f84545",
+										label: "Chrome"
+									}
+								],
+								{
+								responsive : true,
+								segmentShowStroke : false,
+								percentageInnerCutout : 75
+							}));
+/*
+							*/
+						};
+
+
+
+
+
 /*
 						var ctx2 = document.getElementById("chart-css").getContext("2d");
 						window.myBarChart = new Chart(ctx2).Bar(
