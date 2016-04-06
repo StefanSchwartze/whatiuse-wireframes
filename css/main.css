@@ -87,6 +87,12 @@ img {
     color: #1a222f;
     background: transparent;
     border: solid 1px #1a222f; }
+  .button.ghost {
+    background: transparent;
+    border: solid 1px #1a222f;
+    color: #1a222f; }
+  .button.full {
+    width: 100%; }
 
 .table_heading {
   font-family: Droid Serif;
@@ -204,6 +210,8 @@ img {
   background: white;
   /*box-shadow: 0 3px 10px #efefef */
   height: 100%; }
+  .sidebar .button {
+    float: none; }
 
 .chart {
   margin: 1rem; }
@@ -369,6 +377,12 @@ img {
   cursor: pointer; }
   .element:hover .element-box {
     transform: scale(1.05); }
+    .element:hover .element-box .element-property {
+      color: #222222; }
+      .element:hover .element-box .element-property .fa.fa-bolt {
+        color: #fcee07; }
+      .element:hover .element-box .element-property .fa.fa-long-arrow-down {
+        color: #cc0000; }
   .element:hover .element-bar .element-bar-content {
     background: #28948c; }
   .element:nth-child(2) .element-bar .element-bar-content {
@@ -383,6 +397,10 @@ img {
     width: 17%; }
   .element:nth-child(7) .element-bar .element-bar-content {
     width: 12%; }
+  .element:nth-child(8) .element-bar .element-bar-content {
+    width: 9%; }
+  .element:nth-child(9) .element-bar .element-bar-content {
+    width: 3%; }
   .element .element-box {
     transition: transform 0.15s;
     display: flex;
@@ -424,6 +442,7 @@ img {
       margin: 0;
       font-size: 1.25rem; }
   .element .element-property {
+    color: #888888;
     display: flex;
     align-items: center;
     max-height: 25px;
@@ -433,10 +452,6 @@ img {
       font-size: 1rem; }
     .element .element-property .fa {
       margin-right: 0.25rem; }
-      .element .element-property .fa.fa-bolt {
-        color: #fcee07; }
-      .element .element-property .fa.fa-long-arrow-down {
-        color: #cc0000; }
   .element .element-separator {
     flex-grow: 2;
     margin-left: 1rem;
@@ -533,7 +548,11 @@ canvas {
 
 .collapse-content {
   padding: 0.5rem;
-  font-size: 0.5rem; }
+  max-height: 35vh;
+  overflow: scroll; }
+  .collapse-content .input {
+    width: 100%;
+    max-width: none; }
   .collapse-content .element-percentage {
     margin: 1rem auto;
     max-width: 120px;
@@ -551,6 +570,53 @@ canvas {
       align-items: center; }
       .collapse-content .element-percentage .chart-overlay sup {
         font-size: 1rem; }
+
+.compare-chart {
+  display: flex; }
+  .compare-chart .compare-begin, .compare-chart .compare-result {
+    position: relative;
+    flex-grow: 1;
+    margin: 1rem;
+    max-height: 75px; }
+    .compare-chart .compare-begin .chart-overlay, .compare-chart .compare-result .chart-overlay {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      position: absolute; }
+      .compare-chart .compare-begin .chart-overlay strong, .compare-chart .compare-result .chart-overlay strong {
+        width: 100%;
+        text-align: center; }
+        .compare-chart .compare-begin .chart-overlay strong sup, .compare-chart .compare-result .chart-overlay strong sup {
+          font-size: 0.5rem; }
+  .compare-chart .compare-diff {
+    width: 33%;
+    flex-grow: 1;
+    position: relative;
+    transform: rotate(-6.75deg); }
+    .compare-chart .compare-diff span {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem; }
+    .compare-chart .compare-diff .fa {
+      position: absolute;
+      left: 1.8rem;
+      top: 1.5rem; }
+
+.listhead {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .listhead .list-label {
+    flex-grow: 1; }
+  .listhead .property-type {
+    padding: 0.25rem 1.5rem;
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 0.5rem; }
+    .listhead .property-type .fa {
+      margin-right: 0.5rem; }
 
 @media only screen and (max-width: 520px) {
   .chartcol #chart-site {

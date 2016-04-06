@@ -6,6 +6,13 @@
 	&:hover
 		.element-box
 			transform: scale(1.05)
+			.element-property
+				color: #222
+				.fa
+					&.fa-bolt
+						color: #FCEE07
+					&.fa-long-arrow-down
+						color: #cc0000
 		.element-bar .element-bar-content
 			background: #28948c
 	&:nth-child(2)
@@ -26,6 +33,12 @@
 	&:nth-child(7)
 		.element-bar .element-bar-content
 			width: 12%
+	&:nth-child(8)
+		.element-bar .element-bar-content
+			width: 9%
+	&:nth-child(9)
+		.element-bar .element-bar-content
+			width: 3%
 	.element-box
 		transition: transform .15s
 		display: flex
@@ -67,6 +80,7 @@
 			margin: 0
 			font-size: 1.25rem
 	.element-property
+		color: #888
 		display: flex
 		align-items: center
 		max-height: 25px
@@ -76,10 +90,6 @@
 			font-size: 1rem
 		.fa
 			margin-right: .25rem
-			&.fa-bolt
-				color: #FCEE07
-			&.fa-long-arrow-down
-				color: #cc0000
 	.element-separator
 		flex-grow: 2
 		margin-left: 1rem

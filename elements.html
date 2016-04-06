@@ -48,25 +48,51 @@
 							<div class="collapse-content">
 								<div id="canvas-holder" class="element-percentage">
 									<div class="chart-overlay">
-										<strong class="">23<sup>%</sup></strong>
+										<strong class="">47<sup>%</sup></strong>
 									</div>
 									<canvas id="chart-elem1" width="75" height="75"/>
 								</div>
-								<p></p>
+								<h3>flexbox</h3>
+								<ul>
+									<li>Decreases support: <i class="fa fa-long-arrow-down"></i>24%</li>
+									<li>Supported by following browsers: <br/><span><i class="fa fa-chrome"></i>32+</span><span><i class="fa fa-internet-explorer"></i>9+</span> <span><i class="fa fa-firefox"></i>12+</span>
+									</li>
+									<li>Used on following sites:
+										<strong>PREVIEW</strong>
+									</li>
+								</ul>
 							</div>
 						</section>
 						<section>
 							<header class="collapse-head">
 								<h4>What if I use?</h4>
 							</header>
-							<div class="collapse-content">
-							</div>
 						</section>
 						<section>
 							<header class="collapse-head">
 								<h4>What if I delete?</h4>
 							</header>
 							<div class="collapse-content">
+								<input type="text" class="input"/>
+								<a href="#" class="button ghost full">Check</a>
+								<div class="compare-chart">
+									<div id="canvas-holder" class="compare-begin">
+										<div class="chart-overlay">
+											<strong class="">72<sup>%</sup></strong>
+										</div>
+										<canvas id="chart-elem72" width="75" height="75"/>
+									</div>
+									<div class="compare-diff">
+										<span>+15%</span>
+										<i class="fa fa-long-arrow-right fa-3x"></i>
+									</div>
+									<div id="canvas-holder" class="compare-result">
+										<div class="chart-overlay">
+											<strong class="">87<sup>%</sup></strong>
+										</div>
+										<canvas id="chart-elem87" width="75" height="75"/>
+									</div>
+								</div>
 							</div>
 						</section>
 					</div>	
@@ -75,6 +101,17 @@
 						
 
 						<div class="col">
+
+							<header class="listhead">
+
+								<h4 class="list-label">Order elements by:</h4>
+
+								<div class="property-type crashes"><i class="fa fa-bolt"></i>crashes</div>
+								<div class="property-type impact"><i class="fa fa-long-arrow-down"></i>impact</div>
+								<div class="property-type count">count</div>
+
+							</header>
+
 							<div class="element">
 								<div class="element-box">
 									<div id="canvas-holder" class="element-percentage">
@@ -426,6 +463,56 @@
 									</div>
 								</div>
 							</div>
+							<div class="element">
+								<div class="element-box">
+									<div id="canvas-holder" class="element-percentage">
+										<div class="chart-overlay">
+											<strong class="">9<sup>%</sup></strong>
+										</div>
+										<canvas id="chart-elem1" width="75" height="75"/>
+									</div>
+									<div class="element-description">
+										<h2>2D transforms</h2>
+										<div>
+											<ul class="boxlist full">
+												<li class="element-property">
+													<i class="fa fa-bolt"></i>
+													<span>9%</span>
+												</li>
+												<li class="element-property">
+													<i class="fa fa-long-arrow-down"></i>
+													<span>0.5%</span>
+												</li>
+												<li class="element-property">
+													<i class="fa fa-file-text-o"></i>
+													<span>1/5</span>
+												</li>
+												<li class="element-property">
+													<ul class="boxlist">
+														<li class="browser-box">
+															<span><i class="fa fa-chrome"></i>32+</span>
+														</li>
+														<li class="browser-box">
+															<span><i class="fa fa-internet-explorer"></i>9+</span>
+														</li>
+														<li class="browser-box">
+															<span><i class="fa fa-firefox"></i>12+</span>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="element-separator"></div>
+
+								<div class="element-bar">
+									<div class="element-bar-content">
+										<span>34</span>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						
@@ -445,13 +532,41 @@
 				$(document).ready(function(){
 					var dataSite = [
 						{
-							value: 23,
+							value: 47,
 							color:"#F7464A",
 							highlight: "#FF5A5E",
 							label: "Not supported"
 						},
 						{
-							value: 77,
+							value: 53,
+							color: "#efefef",
+							highlight: "#efefef",
+							label: "Supported"
+						}
+					];
+					var dataSite72 = [
+						{
+							value: 28,
+							color:"#F7464A",
+							highlight: "#FF5A5E",
+							label: "Not supported"
+						},
+						{
+							value: 72,
+							color: "#efefef",
+							highlight: "#efefef",
+							label: "Supported"
+						}
+					];
+					var dataSite87 = [
+						{
+							value: 13,
+							color:"#F7464A",
+							highlight: "#FF5A5E",
+							label: "Not supported"
+						},
+						{
+							value: 87,
 							color: "#efefef",
 							highlight: "#efefef",
 							label: "Supported"
@@ -477,7 +592,23 @@
 								segmentShowStroke : false,
 								percentageInnerCutout : 75
 							});
-
+						var ctxPage72 = document.getElementById("chart-elem72").getContext("2d");
+						window.myDoughnut = new Chart(ctxPage72).Doughnut(
+							dataSite72, 
+							{
+								responsive : true,
+								segmentShowStroke : false,
+								percentageInnerCutout : 75
+							});
+						var ctxPage87 = document.getElementById("chart-elem87").getContext("2d");
+						window.myDoughnut = new Chart(ctxPage87).Doughnut(
+							dataSite87, 
+							{
+								responsive : true,
+								segmentShowStroke : false,
+								percentageInnerCutout : 75
+							});
+/*
 						var ctx2 = document.getElementById("chart-css").getContext("2d");
 						window.myBarChart = new Chart(ctx2).Bar(
 							dataElements,
@@ -485,7 +616,7 @@
 								scaleGridLineColor : "rgba(255,255,255,.5)",
 								responsive : true,
 								barShowStroke: false
-							});
+							});*/
 					};
 				});
 			</script>
