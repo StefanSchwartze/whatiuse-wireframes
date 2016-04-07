@@ -23,9 +23,18 @@
 			<header class="section header light-on-dark">
 				<div class="section_content">
 					<div class="header_title">
-						<i class="fa fa-cloud"></i>
+						<img src="img/c_logo_1.png" width="40" height="40" />
 						<span>Code</span><span>Impact</span>
 					</div>
+
+					<div class="scope-toggle">
+						<ul>
+							<li>Global</li>
+							<li>Custom</li>
+							<li>My users</li>
+						</ul>
+					</div>
+
 					<nav class="header_menu">
 						<ul class="header_menu_list">
 							<li class="header_menu_list_item"><a href="dashboard.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
@@ -73,7 +82,7 @@
 								<h4>What if I delete?</h4>
 							</header>
 							<div class="collapse-content">
-								<input type="text" class="input"/>
+								<input type="text" class="input" placeholder="e.g. 3D-transforms" />
 								<a href="#" class="button ghost full">Check</a>
 								<div class="compare-chart">
 									<div id="canvas-holder" class="compare-begin">
@@ -617,7 +626,6 @@
 							var elem = elementBoxes.eq(i);
 							var value = elem.find('.chart-overlay > strong span').text();
 							var donut = elem.find('canvas')[0].getContext("2d");
-console.log(donut);
 							window.charts.push(new Chart(donut).Doughnut(
 								[
 									{
